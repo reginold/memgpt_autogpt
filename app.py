@@ -18,7 +18,8 @@ import openai
 config_list = [
     {
         "api_type": "open_ai",
-        "api_key": "NULL",
+        "api_key": "",
+        "api_base": "https://.azure.com/"
     },
 ]
 llm_config = {"config_list": config_list, "seed": 42}
@@ -27,10 +28,13 @@ llm_config = {"config_list": config_list, "seed": 42}
 # (https://github.com/microsoft/autogen/blob/main/notebook/agentchat_groupchat.ipynb)
 # If USE_MEMGPT is True, then we swap out the "coder" agent with a MemGPT agent
 
-USE_MEMGPT = True
+USE_MEMGPT = False
 
 ## api keys for the memGPT
-openai.api_key="NULL"
+openai.api_type = "azure"
+openai.api_key = ""
+openai.api_base = "https://azure.com/"
+# openai.api_version = "2023-05-15"  # subject to change
 
 
 # The user agent
